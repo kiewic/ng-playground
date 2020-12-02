@@ -12,7 +12,6 @@ Then:
 
 ```
 ng generate m foo
-ng generate m bar
 cd src/app/foo
 ng generate s random
 ng generate c foo
