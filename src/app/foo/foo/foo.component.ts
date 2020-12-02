@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 
-import { RandomService } from '../random.service';
+import { RandomServiceToken, IRandomService } from '../../random-service-token';
 
 @Component({
   selector: 'app-foo',
@@ -15,7 +15,7 @@ import { RandomService } from '../random.service';
 export class FooComponent implements OnInit {
   readonly randomValue: number;
 
-  constructor(random: RandomService) {
+  constructor(@Inject(RandomServiceToken) random: IRandomService) {
     this.randomValue = random.getRandomValue();
   }
 
